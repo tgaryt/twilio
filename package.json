@@ -1,0 +1,29 @@
+{
+	"name": "twilio-browser-client",
+	"version": "1.0.0",
+	"description": "Twilio Browser-based client for receiving incoming calls",
+	"type": "module",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./public/css/style.css",
+		"copy-assets": "cp node_modules/@twilio/voice-sdk/dist/twilio.min.js public/js/ && cp node_modules/socket.io-client/dist/socket.io.min.js public/js/",
+		"build": "npm run copy-assets && npm run build:css"
+	},
+	"dependencies": {
+		"express": "^5.1.0",
+		"twilio": "^5.7.2",
+		"mysql2": "^3.14.1",
+		"socket.io": "^4.8.1",
+		"socket.io-client": "^4.8.1",
+		"@twilio/voice-sdk": "^2.14.0",
+		"cors": "^2.8.5",
+		"dotenv": "^17.0.1",
+		"tailwindcss": "^4.1.11",
+		"@tailwindcss/cli": "^4.1.11"
+	},
+	"engines": {
+		"node": ">=18.20.8"
+	},
+	"author": "EZ-AD TV"
+}
